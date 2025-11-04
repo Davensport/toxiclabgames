@@ -8,21 +8,27 @@ body, html {
     width: 100%;
     height: 100%;
     font-family: 'Roboto', sans-serif; /* A clean default font */
-    
-    /* BACKGROUND:
-      Set to black. For the full effect from the mock-up,
-      find a "dark tech background" or "circuit board" image,
-      upload it, and uncomment the line below.
-    */
-    background-color: #000000;
-    /* background-image: url('your-background-image.png'); */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
     color: #FFFFFF; /* Default text color is white */
-}
 
+    /* === NEW BACKGROUND CODE === */
+    /* 1. Set a fallback color in case the image fails to load */
+    background-color: #000000; 
+
+    /* 2. Load our new background image */
+    background-image: url('background.jpg');
+
+    /* 3. Ensure the image covers the entire screen */
+    background-size: cover;
+
+    /* 4. Center the image */
+    background-position: center center;
+
+    /* 5. Don't repeat or tile the image */
+    background-repeat: no-repeat;
+
+    /* 6. Fix the background so it doesn't scroll with content */
+    background-attachment: fixed;
+}
 /* =================================
    HERO SECTION (The main content)
    =================================
@@ -107,4 +113,5 @@ body, html {
     background-color: #00FF00; /* Fill in on hover */
     color: #000000; /* Black text */
     transform: scale(1.05);
+
 }
