@@ -49,7 +49,7 @@ body, html {
    =================================
 */
 .logo {
-    max-width: 400px; /* Adjust as needed */
+    max-width: 600px; /* Adjust as needed */
     width: 90%;       /* Responsive */
     height: auto;     /* Maintain aspect ratio */
 }
@@ -115,3 +115,4 @@ body, html {
     transform: scale(1.05);
 
 }
+
