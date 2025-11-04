@@ -61,7 +61,7 @@ body, html {
     font-size: 1.25rem;
     letter-spacing: 2px;
     color: #FFFFFF; /* White text */
-    margin-top: -20px; /* Pulls it up closer to the logo text */
+    margin-top: 5px; /* Pulls it up closer to the logo text */
     margin-bottom: 40px; /* Space before the buttons */
 }
 
@@ -115,4 +115,5 @@ body, html {
     transform: scale(1.05);
 
 }
+
 
