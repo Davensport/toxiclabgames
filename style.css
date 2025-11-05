@@ -1,5 +1,5 @@
 /* =================================
-   GLOBAL STYLES
+   GLOBAL STLES
    =================================
 */
 body, html {
@@ -9,35 +9,15 @@ body, html {
     height: 100%;
     font-family: 'Roboto', sans-serif;
     color: #FFFFFF;
-    
-    /* We add a black background as a fallback for the video */
-    background-color: #000000;
-    
-    /* NOTE: All the 'background-image' properties 
-       have been REMOVED from here.
-    */
-}
 
-/* =================================
-   NEW VIDEO BACKGROUND STYLES
-   =================================
-*/
-.background-video {
-    position: fixed; /* Fixes it to the viewport */
-    right: 0;
-    bottom: 0;
-    min-width: 100%; 
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    
-    /* Puts it BEHIND all other content */
-    z-index: -100; 
-    
-    /* This makes it fill the screen, like 'background-size: cover' */
-    object-fit: cover; 
+    /* === YOUR STATIC BACKGROUND === */
+    background-color: #000000; 
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps it from scrolling */
 }
-
 
 /* =================================
    HERO SECTION (Your content)
@@ -52,11 +32,6 @@ body, html {
     text-align: center;
     padding: 20px;
     box-sizing: border-box; 
-    
-    /* This is important: it makes sure the content container
-       is "on top" of the video (which has a z-index of -100) */
-    position: relative;
-    z-index: 2;
 }
 
 /* =================================
