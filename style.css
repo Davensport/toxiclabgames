@@ -1,51 +1,26 @@
 /* =================================
-   GLOBAL STYLES (Applies to everything)
+   GLOBAL STYLES
    =================================
 */
-
-/* === 1. DEFINE THE ANIMATION === */
-/* This creates a "keyframe" animation named 'slowZoom' */
-@keyframes slowZoom {
-  0% {
-    /* Start at normal size */
-    background-size: 100% 100%;
-  }
-  100% {
-    /* End 10% larger */
-    background-size: 110% 110%;
-  }
-}
-
 body, html {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-    font-family: 'Roboto', sans-serif; /* A clean default font */
-    color: #FFFFFF; /* Default text color is white */
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
 
-    /* === YOUR BACKGROUND (FROM BEFORE) === */
+    /* === YOUR STATIC BACKGROUND === */
     background-color: #000000; 
     background-image: url('background.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-
-    /* === 2. APPLY THE ANIMATION === */
-    /*
-      This tells the background to:
-      - Use the 'slowZoom' animation
-      - Take 40 seconds to complete one cycle
-      - Use a smooth 'ease-in-out' timing
-      - Run forever ('infinite')
-      - Go back and forth ('alternate')
-    */
-    animation: slowZoom 40s ease-in-out infinite alternate;
+    background-attachment: fixed; /* Keeps it from scrolling */
 }
 
 /* =================================
-   HERO SECTION (The main content)
+   HERO SECTION (Your content)
    =================================
 */
 .hero-container {
@@ -64,7 +39,7 @@ body, html {
    =================================
 */
 .logo {
-    max-width: 600px; /* You made this bigger */
+    max-width: 600px; /* Your custom size */
     width: 90%;       
     height: auto;     
 }
@@ -75,7 +50,7 @@ body, html {
     font-size: 1.25rem;
     letter-spacing: 2px;
     color: #FFFFFF;
-    margin-top: 5px; /* You adjusted this */
+    margin-top: 5px; /* Your custom spacing */
     margin-bottom: 40px; 
 }
 
@@ -90,7 +65,6 @@ body, html {
     gap: 20px; 
 }
 
-/* Base style for all buttons */
 .btn {
     padding: 12px 28px;
     text-decoration: none;
@@ -103,7 +77,6 @@ body, html {
     cursor: pointer;
 }
 
-/* Primary Button (Filled) */
 .btn-primary {
     background-color: #00FF00;
     border: 2px solid #00FF00;
@@ -116,7 +89,6 @@ body, html {
     transform: scale(1.05); 
 }
 
-/* Secondary Button (Outline) */
 .btn-secondary {
     background-color: transparent;
     border: 2px solid #00FF00;
