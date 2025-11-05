@@ -2,6 +2,20 @@
    GLOBAL STYLES (Applies to everything)
    =================================
 */
+
+/* === 1. DEFINE THE ANIMATION === */
+/* This creates a "keyframe" animation named 'slowZoom' */
+@keyframes slowZoom {
+  0% {
+    /* Start at normal size */
+    background-size: 100% 100%;
+  }
+  100% {
+    /* End 10% larger */
+    background-size: 110% 110%;
+  }
+}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -10,38 +24,39 @@ body, html {
     font-family: 'Roboto', sans-serif; /* A clean default font */
     color: #FFFFFF; /* Default text color is white */
 
-    /* === NEW BACKGROUND CODE === */
-    /* 1. Set a fallback color in case the image fails to load */
+    /* === YOUR BACKGROUND (FROM BEFORE) === */
     background-color: #000000; 
-
-    /* 2. Load our new background image */
     background-image: url('background.jpg');
-
-    /* 3. Ensure the image covers the entire screen */
     background-size: cover;
-
-    /* 4. Center the image */
     background-position: center center;
-
-    /* 5. Don't repeat or tile the image */
     background-repeat: no-repeat;
-
-    /* 6. Fix the background so it doesn't scroll with content */
     background-attachment: fixed;
+
+    /* === 2. APPLY THE ANIMATION === */
+    /*
+      This tells the background to:
+      - Use the 'slowZoom' animation
+      - Take 40 seconds to complete one cycle
+      - Use a smooth 'ease-in-out' timing
+      - Run forever ('infinite')
+      - Go back and forth ('alternate')
+    */
+    animation: slowZoom 40s ease-in-out infinite alternate;
 }
+
 /* =================================
    HERO SECTION (The main content)
    =================================
 */
 .hero-container {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center; /* Center vertically */
-    align-items: center;     /* Center horizontally */
-    min-height: 100vh;      /* Make it at least the full viewport height */
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;     
+    min-height: 100vh;      
     text-align: center;
     padding: 20px;
-    box-sizing: border-box; /* Ensures padding doesn't break layout */
+    box-sizing: border-box; 
 }
 
 /* =================================
@@ -49,20 +64,19 @@ body, html {
    =================================
 */
 .logo {
-    max-width: 600px; /* Adjust as needed */
-    width: 90%;       /* Responsive */
-    height: auto;     /* Maintain aspect ratio */
+    max-width: 600px; /* You made this bigger */
+    width: 90%;       
+    height: auto;     
 }
 
 .slogan {
-    /* The "Exo 2" font looks techy and matches your logo well */
     font-family: 'Exo 2', sans-serif;
     font-weight: 700;
     font-size: 1.25rem;
     letter-spacing: 2px;
-    color: #FFFFFF; /* White text */
-    margin-top: 5px; /* Pulls it up closer to the logo text */
-    margin-bottom: 40px; /* Space before the buttons */
+    color: #FFFFFF;
+    margin-top: 5px; /* You adjusted this */
+    margin-bottom: 40px; 
 }
 
 /* =================================
@@ -71,9 +85,9 @@ body, html {
 */
 .nav-buttons {
     display: flex;
-    flex-wrap: wrap; /* Allows buttons to stack on small screens */
+    flex-wrap: wrap; 
     justify-content: center;
-    gap: 20px; /* Space between the buttons */
+    gap: 20px; 
 }
 
 /* Base style for all buttons */
@@ -84,36 +98,33 @@ body, html {
     font-weight: 700;
     font-size: 1rem;
     letter-spacing: 1px;
-    border-radius: 50px; /* Creates the pill shape */
-    transition: all 0.3s ease; /* Smooth hover effect */
+    border-radius: 50px; 
+    transition: all 0.3s ease; 
     cursor: pointer;
 }
 
 /* Primary Button (Filled) */
 .btn-primary {
-    background-color: #00FF00; /* Your neon green */
+    background-color: #00FF00;
     border: 2px solid #00FF00;
-    color: #000000; /* Black text */
+    color: #000000; 
 }
 
 .btn-primary:hover {
-    background-color: #00AA00; /* Darker green on hover */
+    background-color: #00AA00; 
     border-color: #00AA00;
-    transform: scale(1.05); /* Slight zoom effect */
+    transform: scale(1.05); 
 }
 
 /* Secondary Button (Outline) */
 .btn-secondary {
     background-color: transparent;
     border: 2px solid #00FF00;
-    color: #00FF00; /* Neon green text */
+    color: #00FF00; 
 }
 
 .btn-secondary:hover {
-    background-color: #00FF00; /* Fill in on hover */
-    color: #000000; /* Black text */
+    background-color: #00FF00; 
+    color: #000000; 
     transform: scale(1.05);
-
 }
-
-
