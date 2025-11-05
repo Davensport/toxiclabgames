@@ -89,14 +89,17 @@ body, html {
     transform: scale(1.05); 
 }
 
+/* === UPDATED SECONDARY BUTTON === */
 .btn-secondary {
-    background-color: transparent;
+    background-color: #222222; /* Changed from transparent to dark gray */
     border: 2px solid #00FF00;
     color: #00FF00; 
 }
 
+/* === UPDATED SECONDARY BUTTON HOVER === */
 .btn-secondary:hover {
-    background-color: #00FF00; 
-    color: #000000; 
+    background-color: #FFFFFF; /* Changed to white */
+    border-color: #FFFFFF;     /* Added to match background */
+    color: #000000;             /* Changed to black text */
     transform: scale(1.05);
 }
