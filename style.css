@@ -1,174 +1,69 @@
 /* =================================
-   GLOBAL STYLES
-   =================================
-*/
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    font-family: 'Roboto', sans-serif;
-    color: #FFFFFF;
-
-    /* === YOUR STATIC BACKGROUND === */
-    background-color: #000000; 
-    background-image: url('background.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Keeps it from scrolling */
-}
-
-/* =================================
-   HERO SECTION (Your content)
-   =================================
-*/
-.hero-container {
-    display: flex;
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center;     
-    min-height: 100vh;      
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box; 
-}
-
-/* =================================
-   LOGO & SLOGAN
-   =================================
-*/
-.logo {
-    max-width: 600px; /* Your custom size */
-    width: 90%;       
-    height: auto;     
-}
-
-.slogan {
-    font-family: 'Exo 2', sans-serif;
-    font-weight: 700;
-    font-size: 1.25rem;
-    letter-spacing: 2px;
-    color: #FFFFFF;
-    margin-top: 5px; /* Your custom spacing */
-    margin-bottom: 40px; 
-}
-
-/* =================================
-   NAVIGATION BUTTONS
-   =================================
-*/
-.nav-buttons {
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: center;
-    gap: 20px; 
-}
-
-.btn {
-    padding: 12px 28px;
-    text-decoration: none;
-    font-family: 'Exo 2', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    border-radius: 50px; 
-    transition: all 0.3s ease; 
-    cursor: pointer;
-}
-
-.btn-primary {
-    background-color: #00FF00;
-    border: 2px solid #00FF00;
-    color: #000000; 
-}
-
-.btn-primary:hover {
-    background-color: #00AA00; 
-    border-color: #00AA00;
-    transform: scale(1.05); 
-}
-
-/* === UPDATED SECONDARY BUTTON === */
-.btn-secondary {
-    background-color: #222222; /* Changed from transparent to dark gray */
-    border: 2px solid #00FF00;
-    color: #00FF00; 
-}
-
-/* === UPDATED SECONDARY BUTTON HOVER === */
-.btn-secondary:hover {
-    background-color: #FFFFFF; /* Changed to white */
-    border-color: #FFFFFF;     /* Added to match background */
-    color: #000000;             /* Changed to black text */
-    transform: scale(1.05);
-}
-
-/* =================================
    PROJECT SECTION
    =================================
 */
 .project-section {
-    /* This section stacks the logo, title, and box */
     display: flex;
     flex-direction: column;
     align-items: center; 
     justify-content: center;
     width: 100%;
-    min-height: 100vh; /* Make it fill the screen */
+    min-height: 100vh;
     
-    /* Spacing and background */
     padding: 60px 20px;
     box-sizing: border-box;
-    background-color: #050505; /* Dark background */
+    background-color: #050505; /* This background color is important! */
     border-top: 2px solid #00FF00;
 }
 
 /* 1. Style for the logo in this section */
 .section-logo {
-    max-width: 300px; /* Smaller than the main logo */
+    max-width: 300px;
     width: 60%;
     margin-bottom: 20px;
 }
 
-/* 2. Style for the "FEATURED GAME" title */
+/* 2. This is the main green outline box */
+.project-box {
+    /* === NEW: Must be relative to position the title */
+    position: relative; 
+    
+    border: 3px solid #00FF00;
+    
+    /* === NEW: More top padding to make room */
+    padding: 50px 40px 40px 40px; 
+    
+    max-width: 1100px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 3. This is the new title style */
 .section-title {
     font-family: 'Exo 2', sans-serif;
     font-weight: 700;
     color: #FFFFFF;
     letter-spacing: 2px;
     text-align: center;
-    margin-bottom: 30px;
-    position: relative; /* Needed for the underline */
+    
+    /* === NEW: This lifts the title out of the box */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Moves it up 50% & left 50% */
+
+    /* === NEW: This "cuts" the border */
+    background: #050505; /* Must match .project-section background */
+    padding: 0 15px; /* Adds space on either side of the text */
 }
 
-/* 3. This creates the green underline */
-.section-title::after {
-    content: '';
-    display: block;
-    width: 70px; /* Width of the underline */
-    height: 3px;
-    background: #00FF00;
-    /* Centers the underline */
-    margin: 8px auto 0;
-}
-
-/* 4. This is the main green outline box */
-.project-box {
+/* 4. This new wrapper holds the image and text */
+.project-layout {
     display: flex;
     flex-wrap: wrap; /* Stacks on mobile */
     justify-content: center;
     align-items: center;
     gap: 40px; /* Space between image and text */
-    
-    /* The Box Style */
-    border: 3px solid #00FF00;
-    padding: 40px;
-    
-    /* Sizing */
-    max-width: 1100px;
-    width: 100%;
-    box-sizing: border-box;
 }
 
 /* This is the placeholder for your game's image/art */
@@ -198,7 +93,7 @@ body, html {
 /* Style for the "PROJECT TOXICUS" title */
 .project-content h2 {
     font-family: 'Exo 2', sans-serif;
-    font-size: 3.5rem; /* Big, bold title */
+    font-size: 3.5rem;
     font-weight: 700;
     color: #00FF00;
     margin: 0 0 15px 0;
@@ -219,4 +114,3 @@ body, html {
     gap: 15px;
     margin-top: 30px;
 }
-
