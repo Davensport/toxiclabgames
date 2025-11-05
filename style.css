@@ -109,30 +109,72 @@ body, html {
    =================================
 */
 .project-section {
-    /* This creates the two-column layout */
+    /* This section stacks the logo, title, and box */
     display: flex;
-    flex-wrap: wrap; /* Lets it stack on mobile */
-    align-items: center;
+    flex-direction: column;
+    align-items: center; 
     justify-content: center;
-    gap: 40px; /* Space between image and text */
-
-    /* Sizing and Spacing */
-    min-height: 90vh; /* Make it fill most of the screen */
-    padding: 60px 40px;
-    box-sizing: border-box;
     width: 100%;
-
-    /* Style: A border on top to separate it from the hero */
-    border-top: 2px solid #00FF00;
+    min-height: 100vh; /* Make it fill the screen */
     
-    /* A slightly off-black, different from the hero */
-    background-color: #050505;
+    /* Spacing and background */
+    padding: 60px 20px;
+    box-sizing: border-box;
+    background-color: #050505; /* Dark background */
+    border-top: 2px solid #00FF00;
+}
+
+/* 1. Style for the logo in this section */
+.section-logo {
+    max-width: 300px; /* Smaller than the main logo */
+    width: 60%;
+    margin-bottom: 20px;
+}
+
+/* 2. Style for the "FEATURED GAME" title */
+.section-title {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative; /* Needed for the underline */
+}
+
+/* 3. This creates the green underline */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 70px; /* Width of the underline */
+    height: 3px;
+    background: #00FF00;
+    /* Centers the underline */
+    margin: 8px auto 0;
+}
+
+/* 4. This is the main green outline box */
+.project-box {
+    display: flex;
+    flex-wrap: wrap; /* Stacks on mobile */
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* Space between image and text */
+    
+    /* The Box Style */
+    border: 3px solid #00FF00;
+    padding: 40px;
+    
+    /* Sizing */
+    max-width: 1100px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* This is the placeholder for your game's image/art */
 .project-image-placeholder {
     width: 100%;
-    max-width: 500px; /* Max width for the image */
+    max-width: 500px;
     height: 300px;
     
     /* Placeholder styles - REMOVE THESE LATER */
@@ -150,16 +192,17 @@ body, html {
 .project-content {
     width: 100%;
     max-width: 500px;
-    text-align: left; /* Aligns text to the left */
+    text-align: left;
 }
 
+/* Style for the "PROJECT TOXICUS" title */
 .project-content h2 {
     font-family: 'Exo 2', sans-serif;
-    font-size: 2.5rem; /* Big title */
+    font-size: 3.5rem; /* Big, bold title */
     font-weight: 700;
-    color: #00FF00; /* Neon green title */
+    color: #00FF00;
     margin: 0 0 15px 0;
-    letter-spacing: 1px;
+    line-height: 1.1;
 }
 
 .project-content p {
@@ -167,6 +210,13 @@ body, html {
     font-size: 1.1rem;
     line-height: 1.6;
     color: #FFFFFF;
-    margin-bottom: 30px;
+}
+
+/* 5. A wrapper for the buttons */
+.project-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
 }
 
