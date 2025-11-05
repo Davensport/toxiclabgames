@@ -14,7 +14,7 @@ body, html {
     background-color: #000000; 
     background-image: url('background.jpg');
     background-size: cover;
-    background-position: top center; /* Fixes background cutoff */
+    background-position: center center; /* Reverted back */
     background-repeat: no-repeat;
     background-attachment: fixed; /* Keeps it from scrolling */
 }
@@ -27,7 +27,7 @@ body, html {
     display: flex;
     flex-direction: column; 
     justify-content: center; 
-    align-items: center;     
+    align: items: center;     
     min-height: 100vh;      
     text-align: center;
     padding: 20px;
