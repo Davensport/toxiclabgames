@@ -17,10 +17,6 @@ body, html {
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed; /* Keeps it from scrolling */
-
-    /* === CUSTOM CURSOR === */
-    /* Make sure 'cursor.png' is uploaded to your repository! */
-    cursor: url('cursor.png') 16 16, default;
 }
 
 /* =================================
@@ -78,8 +74,7 @@ body, html {
     letter-spacing: 1px;
     border-radius: 50px; 
     transition: all 0.3s ease; 
-    /* The pointer cursor is already set, which is good! */
-    cursor: pointer; 
+    cursor: pointer;
 }
 
 .btn-primary {
@@ -104,13 +99,4 @@ body, html {
     background-color: #00FF00; 
     color: #000000; 
     transform: scale(1.05);
-}
-
-/* =================================
-   FORCE POINTER ON CLICKABLE ITEMS
-   =================================
-*/
-/* This ensures all links and buttons use the hand icon */
-a, button {
-    cursor: pointer;
 }
