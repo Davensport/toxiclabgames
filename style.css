@@ -37,18 +37,15 @@ body, html {
     justify-content: space-between;
     align-items: center;
     
-    padding: 5px 40px; /* CHANGED: Was 10px, now 5px for a shorter header */
+    padding: 5px 40px; /* Slim header padding */
     box-sizing: border-box;
     z-index: 1000;
     
     /* === HIDDEN BY DEFAULT === */
-    background-color: #050505;
-    border-bottom: 1px solid #00FF00;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-100%); /* Hides it off-screen */
+    transform: translateY(-100%); 
     
-    /* Smooth transition for when it appears */
     transition: opacity 0.3s ease-out, transform 0.3s ease-out, visibility 0.3s ease-out;
 }
 
@@ -57,11 +54,21 @@ body, html {
     /* === MAKES IT VISIBLE === */
     opacity: 1;
     visibility: visible;
-    transform: translateY(0); /* Slides it down into view */
+    transform: translateY(0);
+
+    /* === NEW BACKGROUND === */
+    /* We're now using the same background as the page */
+    background-image: url('background.jpg');
+    background-size: cover;
+    /* This tries to align the header's bg with the page's bg */
+    background-attachment: fixed; 
+    background-position: center center;
+
+    border-bottom: 1px solid #00FF00;
 }
 
 .header-logo {
-    max-width: 150px; /* CHANGED: Was 200px, now smaller to fit */
+    max-width: 150px; /* Small logo for slim header */
     height: auto;
 }
 
@@ -98,14 +105,13 @@ body, html {
     letter-spacing: 2px;
     color: #FFFFFF;
     margin-top: 5px;
-    margin-bottom: 40px; /* Added margin back */
+    margin-bottom: 40px; 
 }
 
 /* =================================
    NAVIGATION BUTTONS
    =================================
 */
-/* This is a general style for all nav button containers */
 .nav-buttons {
     display: flex;
     flex-wrap: wrap; 
