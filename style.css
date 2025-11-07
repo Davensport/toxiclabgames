@@ -335,5 +335,25 @@ body, html {
     margin-top: 40px; /* Space above the button */
 }
 
+/* =================================
+   FOOTER
+   =================================
+*/
+#main-footer {
+    width: 100%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    background-color: #000000;
+    border-top: 1px solid #222; /* Faint line */
+    text-align: center;
+}
+
+#main-footer p {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    color: #888; /* Muted gray text */
+    letter-spacing: 0.5px;
+}
 
 
