@@ -12,7 +12,8 @@ document.addEventListener("DOMContentLoaded", function() {
         window.addEventListener("scroll", function() {
             
             // Check if user has scrolled 90% of the way past the hero
-            if (window.scrollY > (heroHeight * 0.9)) {
+            // === THE FIX IS HERE (>=) ===
+            if (window.scrollY >= (heroHeight * 0.9)) {
                 // If scrolled past, add the 'scrolled' class
                 header.classList.add("scrolled");
             } else {
