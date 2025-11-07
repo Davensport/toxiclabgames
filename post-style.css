@@ -101,3 +101,65 @@ body, html {
     padding-left: 20px;
     line-height: 1.7;
 }
+
+/* =================================
+   NEW POST CONTENT STYLES
+   =================================
+*/
+
+/* Styles for bullet points */
+.post-content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 10px;
+    margin-bottom: 25px;
+}
+
+/* Styles for numbered lists */
+.post-content ol {
+    list-style-type: decimal;
+    margin-left: 20px;
+    padding-left: 10px;
+    margin-bottom: 25px;
+}
+
+.post-content li {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+/* Styles for bold/strong text */
+.post-content strong {
+    color: #00FF00;
+    font-weight: 700;
+}
+
+/* Styles for italic/em text */
+.post-content em {
+    color: #ccc; /* Or a different color if you prefer */
+}
+
+
+/* =================================
+   RESPONSIVE VIDEO WRAPPER
+   =================================
+*/
+/* This container makes the YouTube video responsive */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    margin-bottom: 25px;
+    border-radius: 5px; /* Optional: adds rounded corners */
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
