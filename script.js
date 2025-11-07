@@ -3,19 +3,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Get the header element
     const header = document.getElementById("main-header");
+    
+    // Get the height of the viewport (the splash screen)
+    const heroHeight = window.innerHeight;
 
-    // Check if the header exists
     if (header) {
         
-        // Listen for the scroll event on the window
         window.addEventListener("scroll", function() {
             
-            // Check if the user has scrolled more than 50 pixels down
-            if (window.scrollY > 50) {
-                // If scrolled, add the 'scrolled' class
+            // Check if user has scrolled 90% of the way past the hero
+            if (window.scrollY > (heroHeight * 0.9)) {
+                // If scrolled past, add the 'scrolled' class
                 header.classList.add("scrolled");
             } else {
-                // If at the top, remove the 'scrolled' class
+                // If back at the top, remove the 'scrolled' class
                 header.classList.remove("scrolled");
             }
         });
