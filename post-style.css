@@ -1,0 +1,103 @@
+/* =================================
+   GLOBAL STYLES FOR POSTS
+   =================================
+*/
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    color: #ccc;
+    background-color: #000000;
+}
+
+/* =================================
+   POST CONTAINER
+   =================================
+*/
+.post-container {
+    max-width: 800px; /* Optimal width for reading text */
+    margin: 0 auto; /* Centers the content */
+    padding: 40px 20px;
+}
+
+/* =================================
+   HEADER (Logo & Back Button)
+   =================================
+*/
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #00FF00;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+.post-header .logo-small {
+    width: 150px;
+    height: auto;
+}
+
+.btn-back {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 700;
+    border: 2px solid #00FF00;
+    color: #00FF00;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+    background: #00FF00;
+    color: #000000;
+}
+
+/* =================================
+   POST CONTENT
+   =================================
+*/
+.post-content h1 {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 3rem;
+    color: #00FF00;
+    margin-bottom: 10px;
+}
+
+.post-content .post-date {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 30px;
+}
+
+.post-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+.post-content h2 {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.8rem;
+    color: #00FF00;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 5px;
+}
+
+.post-content ul,
+.post-content ol {
+    padding-left: 20px;
+    line-height: 1.7;
+}
