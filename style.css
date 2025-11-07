@@ -19,7 +19,7 @@ body, html {
     background-color: #000000; 
     background-image: url('background.jpg');
     background-size: cover;
-    background-position: center center;
+    background-position: center center; /* Aligned to the CENTER */
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -56,13 +56,13 @@ body, html {
     visibility: visible;
     transform: translateY(0);
 
-    /* === NEW BACKGROUND === */
-    /* We're now using the same background as the page */
+    /* === USING THE BACKGROUND IMAGE === */
     background-image: url('background.jpg');
     background-size: cover;
-    /* This tries to align the header's bg with the page's bg */
-    background-attachment: fixed; 
-    background-position: center center;
+    background-attachment: fixed; /* Keeps it in sync with the page */
+    
+    /* === THE FIX: Now matches the body's position === */
+    background-position: center center; 
 
     border-bottom: 1px solid #00FF00;
 }
