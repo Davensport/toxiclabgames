@@ -3,7 +3,6 @@
    =================================
 */
 
-/* This makes all anchor links (#games, #devlog) scroll smoothly */
 html {
     scroll-behavior: smooth;
 }
@@ -30,7 +29,7 @@ body, html {
    =================================
 */
 #main-header {
-    position: fixed; /* Sticks to the top */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -38,44 +37,32 @@ body, html {
     justify-content: space-between;
     align-items: center;
     
-    padding: 15px 40px;
-    box-sizing: border-box; /* Ensures padding doesn't break width */
-    z-index: 1000; /* Stays on top of all content */
+    padding: 10px 40px; /* Made smaller */
+    box-sizing: border-box;
+    z-index: 1000;
     
-    /* Transparent by default */
-    background-color: transparent;
+    /* === HIDDEN BY DEFAULT === */
+    background-color: #050505;
+    border-bottom: 1px solid #00FF00;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%); /* Hides it off-screen */
     
-    /* Smooth transition for when we scroll */
-    transition: background-color 0.3s ease-out;
+    /* Smooth transition for when it appears */
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out, visibility 0.3s ease-out;
 }
 
 /* This class is ADDED BY JAVASCRIPT when you scroll */
 #main-header.scrolled {
-    background-color: #050505; /* Solid dark background */
-    border-bottom: 1px solid #00FF00;
-}
-
-.header-logo-link {
-    display: flex;
-    align-items: center;
+    /* === MAKES IT VISIBLE === */
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Slides it down into view */
 }
 
 .header-logo {
-    max-width: 250px; /* Smaller logo for the header */
+    max-width: 200px; /* Even smaller logo for the slimmer header */
     height: auto;
-    transition: opacity 0.3s ease;
-}
-
-/* Hide the header logo when we are at the very top */
-#main-header:not(.scrolled) .header-logo {
-    opacity: 0;
-    pointer-events: none; /* Can't be clicked when invisible */
-}
-
-/* The nav buttons are now part of the header */
-#main-header .nav-buttons {
-    display: flex;
-    gap: 20px;
 }
 
 
@@ -99,7 +86,7 @@ body, html {
    =================================
 */
 .logo {
-    max-width: 600px; /* Your custom size */
+    max-width: 600px;
     width: 90%;       
     height: auto;     
 }
@@ -111,14 +98,21 @@ body, html {
     letter-spacing: 2px;
     color: #FFFFFF;
     margin-top: 5px;
-    margin-bottom: 0; /* No margin needed (buttons are gone) */
+    margin-bottom: 40px; /* Added margin back */
 }
 
 /* =================================
    NAVIGATION BUTTONS
    =================================
 */
-/* These styles now apply to the buttons in the header */
+/* This is a general style for all nav button containers */
+.nav-buttons {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 20px; 
+}
+
 .btn {
     padding: 12px 28px;
     text-decoration: none;
@@ -173,8 +167,6 @@ body, html {
     background-color: #050505;
     border-top: 2px solid #00FF00;
 }
-
-/* The .section-logo class is no longer needed */
 
 .section-title {
     font-family: 'Exo 2', sans-serif;
