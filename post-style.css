@@ -9,9 +9,10 @@ body, html {
     font-family: 'Roboto', sans-serif;
     color: #ccc;
     background-color: #000000;
-    
+
     /* === THIS IS THE FIX === */
-    background-image: none; /* Overrides the background.jpg from style.css */
+    /* This overrides style.css and forces a black background */
+    background-image: none !important; 
 }
 
 /* =================================
