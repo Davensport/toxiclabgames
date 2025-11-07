@@ -49,14 +49,12 @@ body, html {
     transition: opacity 0.3s ease-out, transform 0.3s ease-out, visibility 0.3s ease-out;
 }
 
-/* This class is ADDED BY JAVASCRIPT when you scroll */
 #main-header.scrolled {
-    /* === MAKES IT VISIBLE === */
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
 
-    /* === BACKGROUND FIX === */
+    /* === HEADER BACKGROUND === */
     background-image: url('background.jpg');
     background-size: cover;
     background-attachment: fixed;
@@ -171,8 +169,9 @@ body, html {
     background-color: #050505;
     border-top: 2px solid #00FF00;
 
-    /* Fixes header overlap */
-    scroll-margin-top: 100px;
+    /* === THE FIX === */
+    /* Increased this value slightly */
+    scroll-margin-top: 110px;
 }
 
 .section-title {
@@ -269,8 +268,9 @@ body, html {
     background-color: #000000;
     border-top: 2px solid #00FF00;
 
-    /* Fixes header overlap */
-    scroll-margin-top: 100px;
+    /* === THE FIX === */
+    /* Increased this value slightly */
+    scroll-margin-top: 110px;
 }
 
 .devlog-grid {
@@ -327,8 +327,10 @@ body, html {
     box-sizing: border-box;
 }
 
-/* === NEW: "VIEW ALL" BUTTON STYLE === */
+/* =================================
+   "VIEW ALL" BUTTON STYLE
+   =================================
+*/
 .view-all-btn {
     margin-top: 40px; /* Space above the button */
-    /* We'll re-use the .btn and .btn-primary styles */
 }
