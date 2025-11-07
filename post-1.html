@@ -6,6 +6,9 @@
     
     <title>Dev Log #1: The 'Chroma-Shift' mechanic is working!</title>
     
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+    
     <link rel="stylesheet" href="post-style.css">
     <link rel="stylesheet" href="style.css"> <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,33 +30,37 @@
             <span class="post-date">November 07, 2025</span>
 
             <p>
-                Hey everyone! I'm brand new to game development...
+                Hey everyone! I'm brand new to game development and I'm starting my first <em>real</em> 
+                puzzle platformer I'm calling "Chroma-Shift."
             </p>
             <p>
-                The main idea is a "Chroma-Shift" mechanic...
+                The main idea is a "Chroma-Shift" mechanic, where you can press <strong>Shift</strong> 
+                to change your color (and the world's color) to solve puzzles.
             </p>
             <p>This week, I got the core mechanic working!</p>
 
             <ul>
                 <li>The player can shift from Blue to Red.</li>
-                <li>When the player is Blue...</li>
-                <li>When the player is Red...</li>
-                <li>I also hooked up all the sound effects...</li>
+                <li>When the player is Blue, they can stand on blue platforms and collect blue gems. Red platforms are faded and you fall right through.</li>
+                <li>When the player is Red, the opposite is true!</li>
+                <li>I also hooked up all the sound effects, music, and a main menu.</li>
             </ul>
 
             <h2>The Big Bug... and The Fix!</h2>
             <p>
-                I ran into a massive bug...
+                I ran into a massive bug: If you were standing inside a "faded" platform and 
+                pressed Shift, the platform would become solid <em>inside</em> you, and you'd get 
+                permanently stuck.
             </p>
             <p>To fix it, I had to add a "safety check":</p>
 
             <ol>
                 <li>I added an Area2D "bubble" around the player.</li>
-                <li>Before shifting, the game checks...</li>
-                <li>If it is, the shift is <strong><em>cancelled</em></strong>...</li>
+                <li>Before shifting, the game checks if that bubble is overlapping an "inactive" platform.</li>
+                <li>If it is, the shift is <strong><em>cancelled</em></strong>, and the game plays an error sound and flashes the player red to let them know it failed.</li>
             </ol>
             
-            <p>It's a small detail, but it feels so much better...</p>
+            <p>It's a small detail, but it feels so much better and makes the game's "rules" feel clear.</p>
             <p>Here's the new, polished mechanic in action!</p>
 
 
@@ -62,7 +69,8 @@
             </div>
 
             <p>
-                It feels really solid now. Next up, I'm going to finish polishing Level 1...
+                It feels really solid now. Next up, I'm going to finish polishing Level 1 and 
+                start designing Level 2.
             </p>
             <p>Thanks for reading!</p>
 
