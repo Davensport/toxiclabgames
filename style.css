@@ -19,7 +19,7 @@ body, html {
     background-color: #000000; 
     background-image: url('background.jpg');
     background-size: cover;
-    background-position: center center; /* Aligned to the CENTER */
+    background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -42,6 +42,8 @@ body, html {
     z-index: 1000;
     
     /* === HIDDEN BY DEFAULT === */
+    background-color: #050505;
+    border-bottom: 1px solid #00FF00;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-100%); 
@@ -49,22 +51,10 @@ body, html {
     transition: opacity 0.3s ease-out, transform 0.3s ease-out, visibility 0.3s ease-out;
 }
 
-/* This class is ADDED BY JAVASCRIPT when you scroll */
 #main-header.scrolled {
-    /* === MAKES IT VISIBLE === */
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
-
-    /* === USING THE BACKGROUND IMAGE === */
-    background-image: url('background.jpg');
-    background-size: cover;
-    background-attachment: fixed; /* Keeps it in sync with the page */
-    
-    /* === THE FIX: Now matches the body's position === */
-    background-position: center center; 
-
-    border-bottom: 1px solid #00FF00;
+    transform: translateY(0); 
 }
 
 .header-logo {
@@ -172,6 +162,10 @@ body, html {
     box-sizing: border-box;
     background-color: #050505;
     border-top: 2px solid #00FF00;
+
+    /* === THIS IS THE FIX === */
+    /* Tells the browser to stop scrolling 100px *before* this section */
+    scroll-margin-top: 100px;
 }
 
 .section-title {
@@ -267,6 +261,10 @@ body, html {
     box-sizing: border-box;
     background-color: #000000;
     border-top: 2px solid #00FF00;
+
+    /* === THIS IS THE FIX === */
+    /* Tells the browser to stop scrolling 100px *before* this section */
+    scroll-margin-top: 100px;
 }
 
 .devlog-grid {
