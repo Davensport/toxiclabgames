@@ -171,7 +171,7 @@ body, html {
 
     /* === THE FIX === */
     /* Increased this value slightly */
-    scroll-margin-top: 180px;
+    scroll-margin-top: 80px;
 }
 
 .section-title {
@@ -334,5 +334,6 @@ body, html {
 .view-all-btn {
     margin-top: 40px; /* Space above the button */
 }
+
 
 
