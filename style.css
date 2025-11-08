@@ -1,359 +1,181 @@
 /* =================================
-   GLOBAL STYLES
+   GLOBAL STYLES FOR POSTS
    =================================
 */
-
-html {
-    scroll-behavior: smooth;
-}
-
 body, html {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
     font-family: 'Roboto', sans-serif;
-    color: #FFFFFF;
+    color: #ccc;
+    background-color: #000000;
 
-    /* === YOUR STATIC BACKGROUND === */
-    background-color: #000000; 
-    background-image: url('background.jpg');
+    /* === FIX FOR POSTS === */
+    /* This makes post-1.html black */
+    background-image: none !important; 
+}
+
+/* === FIX FOR ARCHIVE === */
+/* This gives the ARCHIVE page the background image */
+body.page-archive {
+    background-image: url('background.jpg') !important;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+/* This makes the ARCHIVE content section black */
+body.page-archive .devlog-section {
+    background-color: #000;
+}
+
 
 /* =================================
-   NEW STICKY HEADER
+   POST CONTAINER
    =================================
 */
-#main-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+.post-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* =================================
+   HEADER (Logo & Back Button)
+   =================================
+*/
+.post-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
-    padding: 5px 40px; /* Slim header padding */
+    border-bottom: 2px solid #00FF00;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+
+    /* === NEW: Center the header === */
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
     box-sizing: border-box;
-    z-index: 1000;
-    
-    /* === HIDDEN BY DEFAULT === */
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-100%); 
-    
-    transition: opacity 0.3s ease-out, transform 0.3s ease-out, visibility 0.3s ease-out;
 }
 
-#main-header.scrolled {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-
-    /* === HEADER BACKGROUND === */
-    background-image: url('background.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center center; 
-
-    border-bottom: 1px solid #00FF00;
-}
-
-.header-logo {
-    max-width: 150px; /* Small logo for slim header */
+.post-header .logo-small {
+    width: 150px;
     height: auto;
 }
 
-
-/* =================================
-   HERO SECTION (Your content)
-   =================================
-*/
-.hero-container {
-    display: flex;
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center;     
-    min-height: 100vh;      
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box; 
-}
-
-/* =================================
-   LOGO & SLOGAN
-   =================================
-*/
-.logo {
-    max-width: 600px;
-    width: 90%;       
-    height: auto;     
-}
-
-.slogan {
-    font-family: 'Exo 2', sans-serif;
-    font-weight: 700;
-    font-size: 1.25rem;
-    letter-spacing: 2px;
-    color: #FFFFFF;
-    margin-top: 5px;
-    margin-bottom: 40px; 
-}
-
-/* =================================
-   NAVIGATION BUTTONS
-   =================================
-*/
-.nav-buttons {
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: center;
-    gap: 20px; 
-}
-
-.btn {
-    padding: 12px 28px;
+.btn-back {
+    display: inline-block;
+    padding: 10px 20px;
     text-decoration: none;
     font-family: 'Exo 2', sans-serif;
     font-weight: 700;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    border-radius: 50px; 
-    transition: all 0.3s ease; 
-    cursor: pointer;
-}
-
-.btn-primary {
-    background-color: #00FF00;
     border: 2px solid #00FF00;
-    color: #000000; 
-}
-
-.btn-primary:hover {
-    background-color: #00AA00; 
-    border-color: #00AA00;
-    transform: scale(1.05); 
-}
-
-.btn-secondary {
-    background-color: #222222; 
-    border: 2px solid #00FF00;
-    color: #00FF00; 
-}
-
-.btn-secondary:hover {
-    background-color: #FFFFFF; 
-    border-color: #FFFFFF;     
-    color: #000000;             
-    transform: scale(1.05);
-}
-
-/* =================================
-   PROJECT SECTION
-   =================================
-*/
-.project-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center;
-    width: 100%;
-    min-height: 100vh;
-    
-    padding: 60px 20px;
-    box-sizing: border-box;
-    background-color: #050505;
-    border-top: 2px solid #00FF00;
-
-    /* === THE FIX === */
-    /* Increased this value slightly */
-    scroll-margin-top: 80px;
-}
-
-.section-title {
-    font-family: 'Exo 2', sans-serif;
-    font-weight: 700;
-    color: #FFFFFF;
-    letter-spacing: 2px;
-    text-align: center;
-    margin-bottom: 30px;
-    position: relative;
-}
-
-.section-title::after {
-    content: '';
-    display: block;
-    width: 70px;
-    height: 3px;
-    background: #00FF00;
-    margin: 8px auto 0;
-}
-
-.project-box {
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: center;
-    align-items: center;
-    gap: 40px; 
-    
-    border: 3px solid #00FF00;
-    padding: 40px;
-    
-    max-width: 1100px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.project-image-placeholder {
-    width: 100%;
-    max-width: 500px;
-    height: 300px;
-    border: 2px dashed #00FF00;
-    background-color: #111;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #555;
-    font-family: 'Exo 2', sans-serif;
-    font-size: 1.5rem;
-}
-
-.project-content {
-    width: 100%;
-    max-width: 500px;
-    text-align: left;
-}
-
-.project-content h2 {
-    font-family: 'Exo 2', sans-serif;
-    font-size: 3.5rem;
-    font-weight: 700;
     color: #00FF00;
-    margin: 0 0 15px 0;
-    line-height: 1.1;
-}
-
-.project-content p {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #FFFFFF;
-}
-
-.project-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 30px;
-}
-
-/* =================================
-   DEVLOG SECTION
-   =================================
-*/
-.devlog-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: flex-start;
-    width: 100%;
-    min-height: 100vh;
-    
-    padding: 60px 20px;
-    box-sizing: border-box;
-    background-color: #000000;
-    border-top: 2px solid #00FF00;
-
-    /* === THE FIX === */
-    /* Increased this value slightly */
-    scroll-margin-top: 110px;
-}
-
-.devlog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 25px;
-    width: 100%;
-    max-width: 1100px;
-    margin-top: 30px;
-}
-
-.post-card {
-    background-color: #0a0a0a;
-    border: 2px solid #222;
-    border-radius: 8px;
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
+    border-radius: 50px;
     transition: all 0.3s ease;
 }
 
-.post-card:hover {
-    border-color: #00FF00;
-    transform: translateY(-5px);
+.btn-back:hover {
+    background: #00FF00;
+    color: #000000;
 }
 
-.post-date {
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.9rem;
-    color: #888;
+/* =================================
+   POST CONTENT
+   =================================
+*/
+.post-content h1 {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 3rem;
+    color: #00FF00;
     margin-bottom: 10px;
 }
 
-.post-title {
-    font-family: 'Exo 2', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #00FF00;
-    margin: 0 0 15px 0;
-}
-
-.post-snippet {
-    font-family: 'Roboto', sans-serif;
+.post-content .post-date {
     font-size: 1rem;
-    line-height: 1.6;
-    color: #ccc;
+    color: #888;
+    margin-bottom: 30px;
+}
+
+.post-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
     margin-bottom: 25px;
-    flex-grow: 1; 
 }
 
-.post-card .btn-secondary {
-    width: 100%; 
-    text-align: center;
-    box-sizing: border-box;
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+.post-content h2 {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.8rem;
+    color: #00FF00;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 5px;
 }
 
 /* =================================
-   "VIEW ALL" BUTTON STYLE
+   POST CONTENT STYLES
    =================================
 */
-.view-all-btn {
-    margin-top: 40px; /* Space above the button */
+
+.post-content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 10px;
+    margin-bottom: 25px;
 }
 
+.post-content ol {
+    list-style-type: decimal;
+    margin-left: 20px;
+    padding-left: 10px;
+    margin-bottom: 25px;
+}
+
+.post-content li {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.post-content strong {
+    color: #00FF00;
+    font-weight: 700;
+}
+
+.post-content em {
+    color: #ccc;
+}
+
+
 /* =================================
-   FOOTER
+   RESPONSIVE VIDEO WRAPPER
    =================================
 */
-#main-footer {
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    margin-bottom: 25px;
+    border-radius: 5px; 
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 30px 20px;
-    box-sizing: border-box;
-    background-color: #000000;
-    border-top: 1px solid #222; /* Faint line */
-    text-align: center;
+    height: 100%;
 }
-
-#main-footer p {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.9rem;
-    color: #888; /* Muted gray text */
-    letter-spacing: 0.5px;
-}
-
-
