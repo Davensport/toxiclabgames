@@ -10,18 +10,33 @@ body, html {
     color: #ccc;
     background-color: #000000;
 
-    /* === THIS IS THE FIX === */
-    /* This overrides style.css and forces a black background */
+    /* === FIX FOR POSTS === */
+    /* This makes post-1.html black */
     background-image: none !important; 
 }
+
+/* === FIX FOR ARCHIVE === */
+/* This gives the ARCHIVE page the background image */
+body.page-archive {
+    background-image: url('background.jpg') !important;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+/* This makes the ARCHIVE content section black */
+body.page-archive .devlog-section {
+    background-color: #000;
+}
+
 
 /* =================================
    POST CONTAINER
    =================================
 */
 .post-container {
-    max-width: 800px; /* Optimal width for reading text */
-    margin: 0 auto; /* Centers the content */
+    max-width: 800px;
+    margin: 0 auto;
     padding: 40px 20px;
 }
 
@@ -36,6 +51,14 @@ body, html {
     border-bottom: 2px solid #00FF00;
     padding-bottom: 20px;
     margin-bottom: 40px;
+
+    /* === NEW: Center the header === */
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
 }
 
 .post-header .logo-small {
